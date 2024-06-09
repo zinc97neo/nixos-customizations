@@ -1,0 +1,40 @@
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#24273A"
+terminal-left: "0"
+terminal-top: "0"
+terminal-border: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+
+# Logo image
++ image {
+	left = 50%-300
+	top = 30%-300
+    file = "logo.png"
+}
+
++ boot_menu {
+  left = 50%-400
+  top = 60%
+  width = 800
+  height = 35%
+  item_color = "#CAD3F5"
+  selected_item_color = "#CAD3F5"
+  icon_width = 64
+  icon_height = 64
+  item_icon_space = 20
+  item_height = 80
+  item_padding = 2
+  item_spacing = 40
+  selected_item_pixmap_style = "select_*.png"
+}
+
++ label {
+  left = 100
+  top = 83%
+  align = "center"
+  id = "__timeout__"
+  text = "Selected OS will start in %d seconds"
+  color = "#CAD3F5"
+}
