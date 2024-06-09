@@ -15,9 +15,9 @@ terminal-height: "100%"
 }
 
 + boot_menu {
-  left = 50%-400
+  left = 50%-440
   top = 60%
-  width = 800
+  width = 880
   height = 35%
   item_color = "#CAD3F5"
   selected_item_color = "#CAD3F5"
