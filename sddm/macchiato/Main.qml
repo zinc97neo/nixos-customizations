@@ -1,48 +1,51 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Controls 2.15
-import "Components"
+import QtQuick 2.12
+import QtQuick.Window 2.12
+import QtQuick.Controls 2.12
+import "components"
 
 Item {
-  id: root
-  height: Screen.height
-  width: Screen.width
-  Rectangle {
-    id: background
-    anchors.fill: parent
-    height: parent.height
-    width: parent.width
-    z: 0
-    color: config.base
-  }
-  Image {
-    id: backgroundImage
-    anchors.fill: parent
-    height: parent.height
-    width: parent.width
-    fillMode: Image.PreserveAspectCrop
-    visible: config.CustomBackground == "true" ? true : false
-    z: 1
-    source: config.Background
-    asynchronous: false
-    cache: true
-    mipmap: true
-    clip: true
-  }
-  Item {
-    id: mainPanel
-    z: 3
-    anchors {
-      fill: parent
-      margins: 50
+    id: root
+
+    height: Screen.height
+    width: Screen.width
+    
+    Image {
+        id: background
+        
+        anchors.fill: parent
+        height: parent.height
+        width: parent.width
+        fillMode: Image.PreserveAspectCrop
+
+        source: config.Background
+
+        asynchronous: false
+        cache: true
+        mipmap: true
+        clip: true
     }
-    Clock {
-      id: time
-      visible: config.ClockEnabled == "true" ? true : false
+
+    Item {
+        id: contentPanel
+
+        anchors {
+            fill: parent
+            topMargin: config.Padding
+            rightMargin: config.Padding
+            bottomMargin:config.Padding
+            leftMargin: config.Padding
+        }
+
+        DateTimePanel {
+            id: dateTimePanel
+
+            anchors.fill: parent 
+        }
+        
+        LoginPanel {
+            id: loginPanel
+            
+            anchors.fill: parent
+        }
     }
-    LoginPanel {
-      id: loginPanel
-      anchors.fill: parent
-    }
-  }
 }
